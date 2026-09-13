@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="110" viewBox="0 0 360 110">
+  <rect width="360" height="110" fill="white"/>
+  <text x="180" y="48" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="32" fill="#111">IUT NFC</text>
+  <text x="180" y="76" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#333">Belfort · Montbéliard</text>
+</svg>
