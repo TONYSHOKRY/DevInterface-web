@@ -1,0 +1,251 @@
+*{
+
+    font-family: Arial, sans-serif;
+}
+
+body{
+    --back: #f5f8ff;
+    --white: #ffffff;
+    --black: #000000;
+    --secondary: #6a64f1;
+
+    margin: 0;
+    padding: 0;
+    background-color: var(--back);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*
+ |====================================================================================================================
+ |  HEADER
+ |====================================================================================================================
+*/
+
+header{
+    background-color: var(--white);
+    height: 50px;
+
+    width: 50%;
+    max-width: 1000px;
+    border: 2px solid #eeeff5;
+    border-radius: 5px;
+
+    margin: 50px 0;
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap:20px
+}
+header>div{
+    flex-grow: 1;
+}
+header input[type="checkbox"]{
+    display: none;
+}
+header label{
+    display: block;
+    width: 100%;
+    font-weight: bold;
+
+    padding: 10px 0;
+    background-color: var(--back);
+    border-radius: 5px;
+
+    text-align: center;
+
+    /* Pour empÃªcher la sÃ©lection du texte lors du clic */
+    user-select: none;
+    /* Pour changer le curseur de la souris au survol */
+    cursor: pointer;
+}
+header input[type="checkbox"]:checked + label{
+    background-color: var(--secondary);
+    color: var(--white);
+}
+
+
+/*
+ |====================================================================================================================
+ |  Contenu de la page
+ |====================================================================================================================
+*/
+
+
+#content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    gap:30px;
+}
+
+
+
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: var(--white);
+    border: 2px solid #eeeff5;
+    border-radius: 8px;
+
+    padding: 20px;
+
+    width: 400px;
+
+}
+
+.half-line{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+.half-line>div{
+    width: calc(50% - 5px); /* 5px de marge entre les deux */
+}
+
+.line{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.line, .half-line{
+    margin: 10px 0 5px 0;
+}
+
+h2{
+    font-size: 1em;
+    display: inline-block;
+    margin: 5px 0;
+}
+
+/*
+ |====================================================================================================================
+ | INPUTS
+ |====================================================================================================================
+*/
+
+/* champs textuels */
+
+input[type="text"], input[type="number"], input[type="email"], input[type="password"], textarea{
+    width: calc(100% - 30px);
+    padding: 0 10px;
+    height: 30px;
+    border: 1px solid #bebec0;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus{
+    border: 1px solid var(--secondary);
+    outline: none; /* Pour enlever le contour par dÃ©faut du navigateur */
+}
+
+textarea{
+    height: 100px;
+}
+
+
+/* boutons */
+button{
+    background-color: var(--secondary);
+    color: var(--white);
+    border: 1px solid #bebec0;
+    border-radius: 5px;
+    padding: 10px;
+    display: inline-block;
+    width: fit-content;
+}
+
+/* checkbox */
+section input[type="checkbox"]{
+    display: none;
+}
+section input[type="checkbox"] + label{
+    user-select: none;
+
+}
+section input[type="checkbox"] + label:after{
+    font-family: 'Material Symbols Outlined', sans-serif;
+    font-size: 20px;
+    line-height:1;
+    content: "check_box_outline_blank";
+}
+section input[type="checkbox"]:checked + label:after{
+    color: var(--secondary);
+    content: "check_box";
+}
+
+
+/* input type file */
+input[type="file"]{
+  /*  display: none;*/
+}
+
+/* label for file input */
+.file-upload{
+    width: calc(100%);
+    height: 50px;
+    border: 1px dashed #bebec0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+
+/* barrre de chargement */
+progress{
+    width: 100%;
+    height: 20px;
+    border-radius: 5px;
+    margin: 5px 0;
+    height: 8px;
+}
+progress::-webkit-progress-bar{
+    background-color: #e7e7e7;
+}
+progress::-webkit-progress-value{
+    background-color: var(--secondary);
+}
+
+
+
+/*
+ |====================================================================================================================
+ | Liste des fichiers uploadÃ©s ou en cours d'upload
+ |====================================================================================================================
+*/
+
+.file{
+    width: calc(100% - 10px);
+    background-color: var(--back);
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.file>div{
+    display: flex;
+    justify-content: space-between;
+}
+.file>div>span{
+    font-size: 1em;
+    font-weight: bold;
+}
+
